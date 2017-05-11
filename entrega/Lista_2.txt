@@ -1,0 +1,8 @@
+2.1
+arquivo <- read.csv("20160306_CEIS.csv", header=TRUE,  sep="\t", fileEncoding="latin1", skipNul = TRUE)
+nrow(arquivo)
+
+2.2
+dados_perfil <- readxl::read_excel(
+  "arquivos/DadosColetados_PerfilGovTI 2014.xlsx",col_names = TRUE,skip=2)
+nrow(dados_perfil)

@@ -4,3 +4,8 @@
 # empreas que foram declaradas inidôneas ou foram suspensas de contratar com a administração pública.
 # Importe o conjunto de dados contido no arquivo 20160306_CEIS.zip e informe quantos registros tem a base
 # de dados.
+
+
+arquivo <- read.csv("arquivos/20160306_CEIS.csv", header=TRUE,  sep="\t", fileEncoding="latin1", skipNul = TRUE)
+nrow(arquivo)
+

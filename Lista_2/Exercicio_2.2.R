@@ -3,3 +3,8 @@
 # eletrônico http://dados.gov.br/dataset/dados-coletados-no-perfil-de-governanca-de-ti.
 # Importe o conjunto de dados DadosColetados_PerfilGovTI 2014.xlsx e diga quantos registros tem a base
 # de dados.
+
+
+dados_perfil <- readxl::read_excel(
+  "arquivos/DadosColetados_PerfilGovTI 2014.xlsx",col_names = TRUE,skip=2)
+nrow(dados_perfil)
