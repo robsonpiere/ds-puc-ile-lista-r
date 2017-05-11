@@ -4,3 +4,7 @@
 # contém um arquivo .csv com informações relativas ao Anexo 03-Demonstrativo da Receita Corrente
 # Líquida para o primeiro bimestre de 2015. Importe o conteúdo do arquivo. Quantos registros tem o conjunto
 # de dados?
+
+setwd("arquivos")
+demonstrativos <- read.csv("finbraRREO.csv", fileEncoding="latin1", header=T, sep=";", skip=5)
+nrow(demonstrativos)

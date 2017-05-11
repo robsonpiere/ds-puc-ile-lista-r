@@ -6,3 +6,37 @@ nrow(arquivo)
 dados_perfil <- readxl::read_excel(
   "arquivos/DadosColetados_PerfilGovTI 2014.xlsx",col_names = TRUE,skip=2)
 nrow(dados_perfil)
+
+2.3
+install.packages("sqldf")
+library(sqldf)
+todas_escolas <- read.csv("arquivos\\ESCOLAS.CSV", fileEncoding="latin1", header=TRUE, sep="|", skipNul = TRUE)
+linhas <- which(todas_escolas$FK_COD_MUNICIPIO == 3304557 & todas_escolas$ID_DEPENDENCIA_ADM == 3)
+escolas_rio <- todas_escolas[linhas,]
+escolas_rio_2 <- read.csv.sql("arquivos\\ESCOLAS.CSV", "select * from file where FK_COD_MUNICIPIO = 3304557 and ID_DEPENDENCIA_ADM = 3", header=T, sep="|")
+
+2.4
+setwd("arquivos")
+demonstrativos <- read.csv("finbraRREO.csv", fileEncoding="latin1", header=T, sep=";", skip=5)
+nrow(demonstrativos)
+
+2.5
+setwd("arquivos")
+dados_contabeis <- readxl::read_excel(
+  "SICONFI_DCA_6561_ANUAL_1.xls",col_names = TRUE,skip=17 ,sheet = "DCA-Anexo I-G" )
+
+2.6
+install.packages('xlsx')
+library('datasets')
+library('xlsx')
+dados_rock = rock
+dados_ToothGrowth = ToothGrowth
+
+write.xlsx(dados_rock, "exercicio_2.6.xlsx", sheetName='rock')
+write.xlsx(dados_ToothGrowth, "exercicio_2.6.xlsx", sheetName='ToothGrowth', append=T)
+
+2.7
+setwd("arquivos")
+library(sqldf)
+dados_roubo = read.xlsx(file = '14SerieRouboVeiculo2015.xls', sheetIndex = 1,  startRow = 7, header = TRUE, colIndex = 2:15 )
+
